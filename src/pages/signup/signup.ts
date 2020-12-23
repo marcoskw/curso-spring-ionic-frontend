@@ -15,30 +15,31 @@ export class SignupPage {
 
   formGroup: FormGroup;
   estados: EstadoDTO[];
-  cidades: CidadeDTO;
+  cidades: CidadeDTO[];
 
-  constructor(public navCtrl: NavController, 
-              public navParams: NavParams,
-              public formBuilder: FormBuilder,
-              public cidadeService: CidadeService,
-              public estadoService: EstadoService) {
+  constructor(
+    public navCtrl: NavController, 
+    public navParams: NavParams,
+    public formBuilder: FormBuilder,
+    public cidadeService: CidadeService,
+    public estadoService: EstadoService) {
 
     this.formGroup = this.formBuilder.group({
-      nome: ['Joaquim',[Validators.required, Validators.minLength(5), Validators.maxLength(120)]],
-      email: ['joaquim@gmail.com',[Validators.required, Validators.email]],
-      tipo: ['1', [Validators.required]],
-      cpfOuCnpj: ['0613459680', [Validators.required, Validators.minLength(11), Validators.maxLength(14)]],
-      senha: ['123', [Validators.required]],
-      logradouro: ['Boa Saúde', [Validators.required]],
-      numero: ['25', [Validators.required]],
-      complemento: ['Apto 3', []],
-      bairro: ['Copabana', [Validators.required]],
-      cep: ['10828333', [Validators.required]],
-      telefone1: ['977261827', [Validators.required]],
-      telefone2: ['', []],
-      telefone3: ['', []],
-      estadoId: ['null', [Validators.required]],
-      cidadeId: ['null', [Validators.required]]
+      nome: ['Joaquim', [Validators.required, Validators.minLength(5), Validators.maxLength(120)]],
+      email: ['joaquim@gmail.com', [Validators.required, Validators.email]],
+      tipo : ['1', [Validators.required]],
+      cpfOuCnpj : ['06134596280', [Validators.required, Validators.minLength(11), Validators.maxLength(14)]],
+      senha : ['123', [Validators.required]],
+      logradouro : ['Rua Via', [Validators.required]],
+      numero : ['25', [Validators.required]],
+      complemento : ['Apto 3', []],
+      bairro : ['Copacabana', []],
+      cep : ['10828333', [Validators.required]],
+      telefone1 : ['977261827', [Validators.required]],
+      telefone2 : ['', []],
+      telefone3 : ['', []],
+      estadoId : [null, [Validators.required]],
+      cidadeId : [null, [Validators.required]]      
     });
   }
 
@@ -62,8 +63,7 @@ export class SignupPage {
       error => {});
   }
 
-
   signupUser() {
-    console.log("Enviou o form");
+    console.log("enviou o form");
   }
 }
